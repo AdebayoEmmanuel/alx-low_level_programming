@@ -1,0 +1,23 @@
+#include "main.h"
+/* print_line - prints a straight line, n times
+*
+* @n : number of times lines _ is printed
+*
+* @i : counter to track n
+*/
+void print_line(int n)
+{
+	int i;
+
+	if (n != 0)
+	{
+		for (i = 0; i < n; i++)
+		{
+			_putchar('_');
+		}
+		_putchar('\n');
+	} else
+	{
+		_putchar('\n');
+	}
+}
