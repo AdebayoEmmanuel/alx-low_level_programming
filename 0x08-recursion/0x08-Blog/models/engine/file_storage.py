@@ -20,6 +20,6 @@ class FileStorage:
 
     def save(self):
         with open('file.json', 'w') as written:
-           json.dump(Filestorge.__objects, written)
+           json.dump(FileStorage.__objects, written)
 
 
