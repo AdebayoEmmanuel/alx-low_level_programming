@@ -9,16 +9,32 @@ def island_perimeter(grid):
     a method that loops through the grid and meaures perimeter
     """
     perimeter = 0
-    rows = len(grid) - 1
-    cols = len(grid[0]) - 1
-    for i in range(1, rows):
-        for j in range(1, cols):
-            if grid[i-1][j] == 0 and grid[i][j] > 0:
-                perimeter += 1
-            if grid[i+1][j] == 0 and grid[i][j] > 0:
-                perimeter += 1
-            if grid[i][j-1] == 0 and grid[i][j] > 0:
-                perimeter += 1
-            if grid[i][j + 1] == 0 and grid[i][j] > 0:
-                perimeter += 1
+    rows = len(grid)
+    cols = len(grid[0])
+    for i in range(rows):
+        for j in range(cols):
+            try:
+                if grid[i - 1][j] == 0 and grid[i][j] > 0:
+                    perimeter += 1
+            except IndexError:
+                if grid[i][j] > 0:
+                    perimeter += 1
+            try:
+                if grid[i + 1][j] == 0 and grid[i][j] > 0:
+                    perimeter += 1
+            except IndexError:
+                if grid[i][j] > 0:
+                    perimeter += 1
+            try:
+                if grid[i][j - 1] == 0 and grid[i][j] > 0:
+                    perimeter += 1
+            except IndexError:
+                if grid[i][j] > 0:
+                    perimeter += 1
+            try:
+                if grid[i][j + 1] == 0 and grid[i][j] > 0:
+                    perimeter += 1
+            except IndexError:
+                if grid[i][j] > 0:
+                    perimeter += 1
     return perimeter
